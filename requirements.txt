@@ -1,0 +1,7 @@
+pandas           # Data manipulation and analysis
+numpy            # For numerical computations
+scikit-learn     # For machine learning (e.g., Lasso regression)
+matplotlib       # For plotting (if you want to visualize data)
+seaborn          # Optional: For better plotting styles
+statsmodels      # For statistical models (optional for regression)
+datetime         # For handling date and time

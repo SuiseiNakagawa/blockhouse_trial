@@ -1,0 +1,25 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\begin{document}
+\title{Conceptual Questions}
+\author{Suisei Nakagawa}
+\date{\today}
+\maketitle
+
+\section{What’s the motivation behind measuring OFI at multiple depth levels of the order book?}
+
+Deeper levels of the order book beyond the best bids and asks reflect additional supply and demand, and thus more precisely capture trends in price movements. Transactions at deeper levels can show latent buy or sell pressure, which can also bolster the predictive power of models. This is evidenced by the findings in Cont et al. (2023), which showed that 89\% of variance can be explained by the first principal component of multi-level OFIs. 
+
+
+\section{Why do the authors use Lasso regression rather than OLS for estimating cross-impact?}
+
+Lasso regression effectively flattens higher dimensional data by zeroing irrelevant coefficients.  Finding sparse solutions also aligns with the economic intuition that only some assets, such as those in the same market, have a significant influence on each other. Finally, the sparse solutions make the results more readily interpretable. 
+Conversely, OLS is ill-posed for estimating the cross-asset impact of stock returns due to multicollinearity caused by the inter-related nature of stock prices and the influence of overall market trends. In addition, the large number of parameters makes OLS more prone to overfitting. 
+
+
+\section{Why is OFI considered a better predictor of short-term returns than trade volume?}
+
+Trade volume aggregates buys and sells into a single value, and so a higher value could signify both a rising or falling market and offer little predictive value. On the other hand, OFI is directional and represents the buy vs sell pressure. This is more informative as these pressures can predict short-term price movements, such as prices rising in response to an increase in buy pressure. 
+
+\end{document}
